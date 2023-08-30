@@ -1,3 +1,12 @@
+<?php
+require './functions.php';
+
+$posts = getPosts("SELECT * FROM posts");
+
+var_dump($posts);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
