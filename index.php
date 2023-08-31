@@ -9,6 +9,11 @@ $posts = getPosts("SELECT * FROM posts");
 
 <div class="container">
     <h1 class="fs-5">Posts</h1>
+
+    <div class="d-flex justify-content-end my-3">
+        <a href="/create.php" role="button" class="btn btn-success">Create</a>
+    </div>
+
     <div class="table-responsive">
         <table class="table">
             <thead>
@@ -38,7 +43,7 @@ $posts = getPosts("SELECT * FROM posts");
                             <td>
                                 <div class="d-flex gap-2">
                                     <a href="/show.php?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
-                                    <a href="/edit.php?id=<?= $post['id'] ?>" role="button" class="btn btn-success">Edit</a>
+                                    <a href="/edit.php?id=<?= $post['id'] ?>" role="button" class="btn btn-secondary">Edit</a>
                                     <a href="/destroy.php?id=<? $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
                                 </div>
                             </td>
