@@ -1,7 +1,7 @@
 <?php
 require 'functions.php';
 
-// cek apakah tombol submit sudah ditekan atau belum
+// check if button submit is pressed
 if (isset($_POST["submit"])) {
 
     $data = [

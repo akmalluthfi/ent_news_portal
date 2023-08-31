@@ -86,3 +86,39 @@ function createPosts($post)
     // return result from affected rows
     return mysqli_affected_rows($conn) > 0;
 }
+
+function updatePost($post)
+{
+    global $conn;
+
+    // escape chars
+    $id = htmlspecialchars($post['id']);
+    $oldImage = htmlspecialchars($post['old_image']);
+    $title = htmlspecialchars($post['title']);
+    $body = htmlspecialchars($post['body']);
+
+    // is user upload new image
+    if ($post['image']['error'] === 4) {
+        $image = $oldImage;
+    } else {
+        unlink("./images/$oldImage");
+        $image = uploadImage($post['image']);
+    }
+
+    // set new timestamp
+    $timestamp = date('Y-m-d H:i:s');
+
+    // update the data
+    $query = "UPDATE posts SET 
+                image = '$image',
+                title = '$title',
+                body = '$body',
+                updated_at = '$timestamp'
+            WHERE id = $id
+    ";
+
+    mysqli_query($conn, $query);
+
+    // return result from affected rows
+    return mysqli_affected_rows($conn);
+}
