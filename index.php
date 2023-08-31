@@ -20,22 +20,31 @@ $posts = getPosts("SELECT * FROM posts");
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($posts as $index => $post) : ?>
+                <?php if (empty($posts)) : ?>
                     <tr>
-                        <th scope="row"><?= $index + 1; ?></th>
-                        <td>
-                            <img src="./image/<?= $post['image'] ?>" alt="" class="object-fit-cover border rounded" style="width: 10rem;">
-                        </td>
-                        <td><?= $post['title']; ?></td>
-                        <td>
-                            <div class="d-flex gap-2">
-                                <a href="/show.php?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
-                                <a href="/edit.php?id=<?= $post['id'] ?>" role="button" class="btn btn-success">Edit</a>
-                                <a href="/destroy.php?id=<? $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
-                            </div>
+                        <td colspan="4" class="text-center text-danger fs-5">
+                            No data
                         </td>
                     </tr>
-                <?php endforeach; ?>
+
+                <?php else : ?>
+                    <?php foreach ($posts as $index => $post) : ?>
+                        <tr>
+                            <th scope="row"><?= $index + 1; ?></th>
+                            <td>
+                                <img src="./image/<?= $post['image'] ?>" alt="" class="object-fit-cover border rounded" style="width: 10rem;">
+                            </td>
+                            <td><?= $post['title']; ?></td>
+                            <td>
+                                <div class="d-flex gap-2">
+                                    <a href="/show.php?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
+                                    <a href="/edit.php?id=<?= $post['id'] ?>" role="button" class="btn btn-success">Edit</a>
+                                    <a href="/destroy.php?id=<? $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </tbody>
         </table>
     </div>
