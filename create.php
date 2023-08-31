@@ -29,35 +29,33 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+<?php require './views/header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Post</title>
-</head>
+<div class="container">
+    <div class="d-flex justify-content-end">
+        <a href="/index.php" role="button" class="btn btn-secondary mb-3">Back</a>
+    </div>
 
-<body>
+    <h1 class="fs-5 mb-3">Create Posts</h1>
+
     <form action="" method="post" enctype="multipart/form-data">
-
-        <div>
-            <label for="title">Title : </label>
-            <input type="text" name="title" id="title" required>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" name="title" required placeholder="Input your title">
         </div>
 
-        <div>
-            <label for="body">Body : </label>
-            <textarea type="text" name="body" id="body" required></textarea>
+        <div class="mb-3">
+            <label for="body" class="form-label">Body</label>
+            <textarea class="form-control" id="body" rows="3" name="body" required placeholder="Input your content"></textarea>
         </div>
 
-        <div>
-            <label for="image">Image : </label>
-            <input type="file" name="image" id="image">
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload Image</label>
+            <input class="form-control" type="file" id="image" name="image" required>
         </div>
 
-        <button type="submit" name="submit">Create</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
     </form>
-</body>
+</div>
 
-</html>
+<?php require './views/footer.php' ?>

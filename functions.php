@@ -54,7 +54,7 @@ function uploadImage($image)
     $newName = date('Y_m_d_His') . "_" . $name;
 
     // upload  file
-    move_uploaded_file($tmpName, 'image/' . $newName);
+    move_uploaded_file($tmpName, 'images/' . $newName);
 
     return $newName;
 }
