@@ -44,7 +44,7 @@ $posts = getPosts("SELECT * FROM posts");
                                 <div class="d-flex gap-2">
                                     <a href="/show.php?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
                                     <a href="/edit.php?id=<?= $post['id'] ?>" role="button" class="btn btn-secondary">Edit</a>
-                                    <a href="/destroy.php?id=<? $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
+                                    <a href="/destroy.php?id=<?= $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
                                 </div>
                             </td>
                         </tr>

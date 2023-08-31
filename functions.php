@@ -122,3 +122,22 @@ function updatePost($post)
     // return result from affected rows
     return mysqli_affected_rows($conn);
 }
+
+
+function destroyPost($id)
+{
+    global $conn;
+
+
+    $result = mysqli_query($conn, "SELECT * FROM posts WHERE id=$id");
+    $post = mysqli_fetch_assoc($result);
+
+    $image = $post['image'];
+    // delete image
+    unlink("./images/$image");
+    // delete data
+    mysqli_query($conn, "DELETE FROM posts WHERE id = $id");
+
+    // return result from affected rows
+    return mysqli_affected_rows($conn);
+}
