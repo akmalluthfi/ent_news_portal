@@ -12,7 +12,7 @@
 <body>
 
     <nav class="navbar bg-body-tertiary shadow-sm mb-3">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">News Portal</span>
+        <div class="container">
+            <a class="navbar-brand" href="/index.php">News Portal</a>
         </div>
     </nav>
