@@ -61,11 +61,10 @@ if (isset($_POST['submit'])) {
         </div>
 
         <div class="mb-3">
-            <img src="/images/<?= $post['image'] ?>" alt="<?= $post['title'] ?> Image" class="rounded mb-3" style="width: 18rem;">
-        </div>
+            <label for="image" class="form-label mb-3 d-block">Upload Image</label>
 
-        <div class="mb-3">
-            <label for="image" class="form-label">Upload Image</label>
+            <img src="/images/<?= $post['image'] ?>" alt="<?= $post['title'] ?> Image" class="rounded mb-3" style="width: 18rem;">
+
             <input class="form-control" type="file" id="image" name="image">
         </div>
 
