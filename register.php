@@ -2,6 +2,8 @@
 
 require './functions.php';
 
+guestMiddleware();
+
 if (isset($_POST['register'])) {
     $data = [
         'username' => $_POST['username'],

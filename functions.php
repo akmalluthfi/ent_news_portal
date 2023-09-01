@@ -175,7 +175,7 @@ function login($data)
     // query user
     $username = $data['username'];
 
-    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    $result = mysqli_query($conn, "SELECT * FROM users WHERE username = '$username'");
 
     // check is username
     if (mysqli_num_rows($result) === 1) {
@@ -187,4 +187,24 @@ function login($data)
 
     // if user is not found
     return false;
+}
+
+function authenticatedMiddleware()
+{
+    session_start();
+
+    if (!isset($_SESSION["login"])) {
+        header("Location: login.php");
+        exit;
+    }
+}
+
+function guestMiddleware()
+{
+    session_start();
+
+    if (isset($_SESSION['login'])) {
+        header("Location: index.php");
+        exit;
+    }
 }

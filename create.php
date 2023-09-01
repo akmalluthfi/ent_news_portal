@@ -1,6 +1,8 @@
 <?php
 require 'functions.php';
 
+authenticatedMiddleware();
+
 // check if button submit is pressed
 if (isset($_POST["submit"])) {
 

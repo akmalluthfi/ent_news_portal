@@ -1,6 +1,8 @@
 <?php
 require './functions.php';
 
+authenticatedMiddleware();
+
 // check if parameter doesn't exists
 if (empty($_GET['id'])) header("Location: /index.php");
 

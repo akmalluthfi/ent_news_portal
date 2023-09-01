@@ -1,6 +1,8 @@
 <?php
 require './functions.php';
 
+authenticatedMiddleware();
+
 $posts = getPosts("SELECT * FROM posts");
 
 ?>
