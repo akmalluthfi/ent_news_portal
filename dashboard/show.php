@@ -19,7 +19,22 @@ if (!is_numeric($id)) {
     exit;
 }
 
-[$post] = getPosts("SELECT * FROM posts WHERE id=$id");
+$posts = getPosts("SELECT * FROM posts WHERE id=$id");
+
+if (empty($posts)) {
+    echo "
+            <script>
+                alert('query error!');
+                document.location.href = '/dashboard';
+            </script>
+        ";
+
+    exit;
+} else {
+    $post = $posts[1];
+}
+
+
 
 ?>
 
