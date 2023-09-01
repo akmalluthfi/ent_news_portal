@@ -9,6 +9,15 @@ function getPosts($query)
     // query data
     $result = mysqli_query($conn, $query);
 
+    if ($result->num_rows <= 0) {
+        echo "
+			<script>
+				alert('query error!');
+				document.location.href = '/dashboard';
+			</script>
+		";
+    }
+
     // return result query data in array
     $posts = [];
     while ($post = mysqli_fetch_assoc($result)) {

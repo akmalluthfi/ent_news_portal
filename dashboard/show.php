@@ -8,6 +8,17 @@ if (empty($_GET['id'])) header("Location: /dashboard");
 
 $id = $_GET['id'];
 
+if (!is_numeric($id)) {
+    echo "
+			<script>
+				alert('Invalid parameter');
+				document.location.href = '/';
+			</script>
+		";
+
+    exit;
+}
+
 [$post] = getPosts("SELECT * FROM posts WHERE id=$id");
 
 ?>
