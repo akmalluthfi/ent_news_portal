@@ -37,7 +37,7 @@ if (isset($_POST['register'])) {
             <div class="card border-0 shadow p-3">
                 <div class="card-body">
                     <h1 class="mb-3">Register</h1>
-                    <form method="POST" action="">
+                    <form method="POST" action="" class="mb-3">
 
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
@@ -51,6 +51,10 @@ if (isset($_POST['register'])) {
 
                         <button type="submit" name="register" class="btn btn-primary w-100">Register</button>
                     </form>
+
+                    <p class="fs-6 fw-light text-body-secondary ">
+                        Already have an account? <a href="/login.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+                    </p>
                 </div>
             </div>
         </div>
