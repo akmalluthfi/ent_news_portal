@@ -1,4 +1,7 @@
 <?php
+require './functions.php';
+
+authenticatedMiddleware();
 
 if (isset($_POST['logout'])) {
     session_start();
