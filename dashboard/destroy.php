@@ -1,10 +1,10 @@
 <?php
-require './functions.php';
+require '../functions.php';
 
 authenticatedMiddleware();
 
 // check if parameter doesn't exists
-if (empty($_GET['id'])) header("Location: /index.php");
+if (empty($_GET['id'])) header("Location: /dashboard");
 
 $id = $_GET['id'];
 
@@ -13,14 +13,14 @@ if (destroyPost($id) > 0) {
     echo "
         <script>
             alert('delete post successfully!');
-            document.location.href = 'index.php';
+            document.location.href = '/dashboard';
         </script>
     ";
 } else {
     echo "
         <script>
             alert('post failed to delete!');
-            document.location.href = 'index.php';
+            document.location.href = '/dashboard';
         </script>
     ";
 }

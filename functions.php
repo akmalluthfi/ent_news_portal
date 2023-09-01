@@ -54,7 +54,7 @@ function uploadImage($image)
     $newName = date('Y_m_d_His') . "_" . $name;
 
     // upload  file
-    move_uploaded_file($tmpName, 'images/' . $newName);
+    move_uploaded_file($tmpName, "../images/$newName");
 
     return $newName;
 }
@@ -101,7 +101,7 @@ function updatePost($post)
     if ($post['image']['error'] === 4) {
         $image = $oldImage;
     } else {
-        unlink("./images/$oldImage");
+        unlink("../images/$oldImage");
         $image = uploadImage($post['image']);
     }
 
@@ -133,7 +133,7 @@ function destroyPost($id)
 
     $image = $post['image'];
     // delete image
-    unlink("./images/$image");
+    unlink("../images/$image");
     // delete data
     mysqli_query($conn, "DELETE FROM posts WHERE id = $id");
 
@@ -194,7 +194,7 @@ function authenticatedMiddleware()
     session_start();
 
     if (!isset($_SESSION["login"])) {
-        header("Location: login.php");
+        header("Location: /login");
         exit;
     }
 }
@@ -204,7 +204,7 @@ function guestMiddleware()
     session_start();
 
     if (isset($_SESSION['login'])) {
-        header("Location: index.php");
+        header("Location: /");
         exit;
     }
 }

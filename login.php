@@ -16,14 +16,14 @@ if (isset($_POST['login'])) {
         echo "
 			<script>
 				alert('login successfully!');
-				document.location.href = 'index.php';
+				document.location.href = '/dashboard';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('These credentials do not match our records.');
-				document.location.href = 'login.php';
+				document.location.href = 'login';
 			</script>
 		";
     }
@@ -55,7 +55,7 @@ if (isset($_POST['login'])) {
                     </form>
 
                     <p class="fs-6 fw-light text-body-secondary ">
-                        Don't have an account yet? <a href="/register.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                        Don't have an account yet? <a href="/register" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
                     </p>
                 </div>
             </div>

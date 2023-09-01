@@ -1,5 +1,5 @@
 <?php
-require 'functions.php';
+require '../functions.php';
 
 authenticatedMiddleware();
 
@@ -17,27 +17,27 @@ if (isset($_POST["submit"])) {
         echo "
 			<script>
 				alert('created post successfully!');
-				document.location.href = 'index.php';
+				document.location.href = '/dashboard';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('post failed to create!');
-				document.location.href = 'index.php';
+				document.location.href = '/dashboard';
 			</script>
 		";
     }
 }
 ?>
 
-<?php require './components/header.php' ?>
+<?php require '../components/header.php' ?>
 
-<?php require './components/navbar.php' ?>
+<?php require '../components/navbar.php' ?>
 
 <div class="container">
     <div class="d-flex justify-content-end">
-        <a href="/index.php" role="button" class="btn btn-secondary mb-3">Back</a>
+        <a href="/dashboard" role="button" class="btn btn-secondary mb-3">Back</a>
     </div>
 
     <h1 class="fs-5 mb-3">Create Posts</h1>
@@ -62,4 +62,4 @@ if (isset($_POST["submit"])) {
     </form>
 </div>
 
-<?php require './components/footer.php' ?>
+<?php require '../components/footer.php' ?>

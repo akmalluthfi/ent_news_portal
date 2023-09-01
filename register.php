@@ -14,14 +14,14 @@ if (isset($_POST['register'])) {
         echo "
 			<script>
 				alert('registered user successfully!');
-				document.location.href = 'login.php';
+				document.location.href = 'login';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('registered user failed!');
-				document.location.href = 'register.php';
+				document.location.href = 'register';
 			</script>
 		";
     }
@@ -53,7 +53,7 @@ if (isset($_POST['register'])) {
                     </form>
 
                     <p class="fs-6 fw-light text-body-secondary ">
-                        Already have an account? <a href="/login.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
+                        Already have an account? <a href="/login" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Login here</a>
                     </p>
                 </div>
             </div>

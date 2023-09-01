@@ -1,10 +1,10 @@
 <?php
-require './functions.php';
+require '../functions.php';
 
 authenticatedMiddleware();
 
 // check if parameter doesn't exists
-if (empty($_GET['id'])) header("Location: /index.php");
+if (empty($_GET['id'])) header("Location: /dashboard");
 
 $id = $_GET['id'];
 
@@ -27,14 +27,14 @@ if (isset($_POST['submit'])) {
         echo "
 			<script>
 				alert('updated post successfully!');
-				document.location.href = 'index.php';
+				document.location.href = '/dashboard';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('post failed to update!');
-				document.location.href = 'index.php';
+				document.location.href = '/dashboard/create';
 			</script>
 		";
     }
@@ -42,13 +42,13 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php require './components/header.php' ?>
+<?php require '../components/header.php' ?>
 
-<?php require './components/navbar.php' ?>
+<?php require '../components/navbar.php' ?>
 
 <div class="container">
     <div class="d-flex justify-content-end">
-        <a href="/index.php" role="button" class="btn btn-secondary mb-3">Back</a>
+        <a href="/dashboard" role="button" class="btn btn-secondary mb-3">Back</a>
     </div>
 
     <h1 class="fs-5 mb-3">Edit Posts</h1>
@@ -76,4 +76,4 @@ if (isset($_POST['submit'])) {
     </form>
 </div>
 
-<?php require './components/footer.php' ?>
+<?php require '../components/footer.php' ?>
