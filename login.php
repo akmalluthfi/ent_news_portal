@@ -10,9 +10,6 @@ if (isset($_POST['login'])) {
     ];
 
     if (login($data) > 0) {
-        // set session
-        $_SESSION["login"] = true;
-
         echo "
 			<script>
 				alert('login successfully!');

@@ -5,7 +5,7 @@
         <?php if (isset($_SESSION["login"])) : ?>
             <div class="dropdown">
                 <button class="btn btn-link text-decoration-none text-dark-emphasis dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Hello, Username
+                    Welcome, <?= $_SESSION['username'] ?>
                 </button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/dashboard/">Dashboard</a></li>

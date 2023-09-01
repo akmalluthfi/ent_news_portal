@@ -182,7 +182,17 @@ function login($data)
         $row = mysqli_fetch_assoc($result);
 
         // check password and return result checked password
-        return password_verify($data['password'], $row["password"]);
+        if (password_verify($data['password'], $row["password"])) {
+
+            // set session
+            $_SESSION["login"] = true;
+            $_SESSION["user_id"] = $row['id'];
+            $_SESSION["username"] = $row['username'];
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // if user is not found
