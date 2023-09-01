@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
             <div class="card border-0 shadow p-3">
                 <div class="card-body">
                     <h1 class="mb-3">Login</h1>
-                    <form method="POST" action="">
+                    <form method="POST" action="" class="mb-3">
 
                         <div class="mb-3">
                             <label for="username" class="form-label">Username</label>
@@ -53,6 +53,10 @@ if (isset($_POST['login'])) {
 
                         <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
                     </form>
+
+                    <p class="fs-6 fw-light text-body-secondary ">
+                        Don't have an account yet? <a href="/register.php" class="font-medium text-primary-600 hover:underline dark:text-primary-500">Sign up</a>
+                    </p>
                 </div>
             </div>
         </div>
