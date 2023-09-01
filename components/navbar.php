@@ -4,7 +4,7 @@
 
         <?php if (isset($_SESSION["login"])) : ?>
             <div class="dropdown">
-                <button class="btn btn-link text-decoration-none text-black dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn btn-link text-decoration-none text-dark-emphasis dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Hello, Username
                 </button>
                 <ul class="dropdown-menu">
@@ -14,7 +14,10 @@
                     </li>
                     <li>
                         <form class="dropdown-item" method="post" action="/logout">
-                            <button class="btn btn-link text-danger p-0 m-0" type="submit" name="logout">Logout</button>
+                            <button class="btn btn-link text-decoration-none text-danger p-0 m-0" type="submit" name="logout">
+                                <i class="bi bi-box-arrow-right me-2"></i>
+                                Logout
+                            </button>
                         </form>
                     </li>
                 </ul>
