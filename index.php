@@ -5,7 +5,9 @@ $posts = getPosts("SELECT * FROM posts");
 
 ?>
 
-<?php require './views/header.php' ?>
+<?php require './components/header.php' ?>
+
+<?php require './components/navbar.php' ?>
 
 <div class="container">
     <h1 class="fs-5">Posts</h1>
@@ -55,4 +57,4 @@ $posts = getPosts("SELECT * FROM posts");
     </div>
 </div>
 
-<?php require './views/footer.php' ?>
+<?php require './components/footer.php' ?>

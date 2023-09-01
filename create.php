@@ -29,7 +29,9 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<?php require './views/header.php' ?>
+<?php require './components/header.php' ?>
+
+<?php require './components/navbar.php' ?>
 
 <div class="container">
     <div class="d-flex justify-content-end">
@@ -58,4 +60,4 @@ if (isset($_POST["submit"])) {
     </form>
 </div>
 
-<?php require './views/footer.php' ?>
+<?php require './components/footer.php' ?>

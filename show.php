@@ -9,7 +9,10 @@ $id = $_GET['id'];
 [$post] = getPosts("SELECT * FROM posts WHERE id=$id");
 
 ?>
-<?php require './views/header.php' ?>
+
+<?php require './components/header.php' ?>
+
+<?php require './components/navbar.php' ?>
 
 <div class="container">
 
@@ -26,4 +29,4 @@ $id = $_GET['id'];
     </div>
 </div>
 
-<?php require './views/footer.php' ?>
+<?php require './components/footer.php' ?>
