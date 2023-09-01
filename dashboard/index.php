@@ -3,7 +3,8 @@ require '../functions.php';
 
 authenticatedMiddleware();
 
-$posts = getPosts("SELECT * FROM posts");
+$userId = $_SESSION['user_id'];
+$posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
 
 ?>
 
