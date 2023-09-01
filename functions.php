@@ -128,7 +128,6 @@ function destroyPost($id)
 {
     global $conn;
 
-
     $result = mysqli_query($conn, "SELECT * FROM posts WHERE id=$id");
     $post = mysqli_fetch_assoc($result);
 
@@ -137,6 +136,33 @@ function destroyPost($id)
     unlink("./images/$image");
     // delete data
     mysqli_query($conn, "DELETE FROM posts WHERE id = $id");
+
+    // return result from affected rows
+    return mysqli_affected_rows($conn);
+}
+
+function register($data)
+{
+    global $conn;
+
+    $username = strtolower(stripslashes($data["username"]));
+    $password = mysqli_real_escape_string($conn, $data["password"]);
+
+    // check if username already exists
+    $result = mysqli_query($conn, "SELECT username FROM users WHERE username = '$username'");
+
+    if (mysqli_fetch_assoc($result)) {
+        echo "<script>
+				alert('Username already exists!')
+		      </script>";
+        return false;
+    }
+
+    // encryption password
+    $password = password_hash($password, PASSWORD_DEFAULT);
+
+    // insert new user
+    mysqli_query($conn, "INSERT INTO users(username, password) VALUES('$username', '$password')");
 
     // return result from affected rows
     return mysqli_affected_rows($conn);
