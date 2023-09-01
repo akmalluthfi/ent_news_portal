@@ -70,15 +70,18 @@ function createPosts($post)
     // insert timestamp for updated_at and created_at
     $timestamp = date('Y-m-d H:i:s');
 
+    // prepare user_id
+    $userId = $_SESSION['user_id'];
+
     // upload image
     $image = uploadImage($post['image']);
     // if uploaded error
     if (!$image) return false;
 
     // insert post
-    $query = "INSERT INTO posts(image, title, body, created_at, updated_at)
+    $query = "INSERT INTO posts(image, title, body, user_id, created_at, updated_at)
                 VALUES
-                ('$image', '$title', '$body', '$timestamp', '$timestamp')
+                ('$image', '$title', '$body', $userId,'$timestamp', '$timestamp')
             ";
 
     mysqli_query($conn, $query);
