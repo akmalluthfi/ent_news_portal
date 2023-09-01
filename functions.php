@@ -167,3 +167,24 @@ function register($data)
     // return result from affected rows
     return mysqli_affected_rows($conn);
 }
+
+function login($data)
+{
+    global $conn;
+
+    // query user
+    $username = $data['username'];
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+
+    // check is username
+    if (mysqli_num_rows($result) === 1) {
+        $row = mysqli_fetch_assoc($result);
+
+        // check password and return result checked password
+        return password_verify($data['password'], $row["password"]);
+    }
+
+    // if user is not found
+    return false;
+}

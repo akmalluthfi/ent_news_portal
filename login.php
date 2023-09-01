@@ -1,3 +1,34 @@
+<?php
+require './functions.php';
+
+if (isset($_POST['login'])) {
+    $data = [
+        'username' => $_POST['username'],
+        'password' => $_POST['password'],
+    ];
+
+    if (login($data) > 0) {
+        // set session
+        $_SESSION["login"] = true;
+
+        echo "
+			<script>
+				alert('login successfully!');
+				document.location.href = 'index.php';
+			</script>
+		";
+    } else {
+        echo "
+			<script>
+				alert('These credentials do not match our records.');
+				document.location.href = 'login.php';
+			</script>
+		";
+    }
+}
+
+?>
+
 <?php require './components/header.php' ?>
 
 <div class="container">
@@ -18,7 +49,7 @@
                             <input type="password" class="form-control" id="password" name="password" placeholder="*********" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100">Login</button>
+                        <button type="submit" name="login" class="btn btn-primary w-100">Login</button>
                     </form>
                 </div>
             </div>
