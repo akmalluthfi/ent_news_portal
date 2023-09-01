@@ -34,6 +34,11 @@ if (isset($_POST['register'])) {
 <div class="container">
     <div class="row vh-100 align-items-center justify-content-center">
         <div class="col" style="max-width: 400px">
+
+            <a href="/" class="text-decoration-none text-body-emphasis">
+                <h2 class="text-center fw-normal mb-3">News Portal</h2>
+            </a>
+
             <div class="card border-0 shadow p-3">
                 <div class="card-body">
                     <h1 class="mb-3">Register</h1>
