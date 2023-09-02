@@ -31,7 +31,7 @@ if (empty($posts)) {
 
     exit;
 } else {
-    $post = $posts[1];
+    $post = $posts[0];
 }
 
 

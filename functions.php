@@ -204,7 +204,7 @@ function login($data)
 
 function authenticatedMiddleware()
 {
-    session_start();
+    @session_start();
 
     if (!isset($_SESSION["login"])) {
         header("Location: /login");
@@ -214,7 +214,7 @@ function authenticatedMiddleware()
 
 function guestMiddleware()
 {
-    session_start();
+    @session_start();
 
     if (isset($_SESSION['login'])) {
         header("Location: /");
