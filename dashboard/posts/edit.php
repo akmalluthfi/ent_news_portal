@@ -1,5 +1,5 @@
 <?php
-require '../functions.php';
+require './functions.php';
 
 authenticatedMiddleware();
 
@@ -27,14 +27,13 @@ if (isset($_POST['submit'])) {
         echo "
 			<script>
 				alert('updated post successfully!');
-				document.location.href = '/dashboard';
+				document.location.href = '/dashboard/posts';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('post failed to update!');
-				document.location.href = '/dashboard/create';
 			</script>
 		";
     }
@@ -42,9 +41,9 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<?php require '../components/header.php' ?>
+<?php require '../../components/header.php' ?>
 
-<?php require '../components/navbar.php' ?>
+<?php require '../../components/navbar.php' ?>
 
 <div class="container">
     <div class="d-flex justify-content-end">
@@ -76,4 +75,4 @@ if (isset($_POST['submit'])) {
     </form>
 </div>
 
-<?php require '../components/footer.php' ?>
+<?php require '../../components/footer.php' ?>
