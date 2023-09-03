@@ -1,5 +1,5 @@
 <?php
-require '../functions.php';
+require './functions.php';
 
 authenticatedMiddleware();
 
@@ -31,9 +31,9 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<?php require '../components/header.php' ?>
+<?php require '../../components/header.php' ?>
 
-<?php require '../components/navbar.php' ?>
+<?php require '../../components/navbar.php' ?>
 
 <div class="container">
     <div class="d-flex justify-content-end">
@@ -42,7 +42,7 @@ if (isset($_POST["submit"])) {
 
     <h1 class="fs-5 mb-3">Create Posts</h1>
 
-    <form action="" method="post" enctype="multipart/form-data">
+    <form action="" class="mb-5" method="post" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>
             <input type="text" class="form-control" id="title" name="title" required placeholder="Input your title">
@@ -62,4 +62,4 @@ if (isset($_POST["submit"])) {
     </form>
 </div>
 
-<?php require '../components/footer.php' ?>
+<?php require '../../components/footer.php' ?>
