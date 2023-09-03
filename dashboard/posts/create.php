@@ -17,14 +17,14 @@ if (isset($_POST["submit"])) {
         echo "
 			<script>
 				alert('created post successfully!');
-				document.location.href = '/dashboard';
+				document.location.href = '/dashboard/posts';
 			</script>
 		";
     } else {
         echo "
 			<script>
 				alert('post failed to create!');
-				document.location.href = '/dashboard';
+				document.location.href = '/dashboard/posts';
 			</script>
 		";
     }
@@ -37,7 +37,7 @@ if (isset($_POST["submit"])) {
 
 <div class="container">
     <div class="d-flex justify-content-end">
-        <a href="/dashboard" role="button" class="btn btn-secondary mb-3">Back</a>
+        <a href="/dashboard/posts" role="button" class="btn btn-secondary mb-3">Back</a>
     </div>
 
     <h1 class="fs-5 mb-3">Create Posts</h1>

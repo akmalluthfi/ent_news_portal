@@ -16,7 +16,7 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
     <h1 class="fs-5">Ganti Posts</h1>
 
     <div class="d-flex justify-content-end my-3">
-        <a href="/dashboard/create" role="button" class="btn btn-success">Create</a>
+        <a href="/dashboard/posts/create" role="button" class="btn btn-success">Create</a>
     </div>
 
     <div class="table-responsive">
