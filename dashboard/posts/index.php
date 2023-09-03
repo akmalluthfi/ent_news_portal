@@ -13,7 +13,7 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
 <?php require '../../components/navbar.php' ?>
 
 <div class="container">
-    <h1 class="fs-5">Posts</h1>
+    <h1 class="fs-5">Ganti Posts</h1>
 
     <div class="d-flex justify-content-end my-3">
         <a href="/dashboard/create" role="button" class="btn btn-success">Create</a>
