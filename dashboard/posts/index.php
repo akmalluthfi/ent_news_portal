@@ -47,9 +47,9 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
                             <td><?= $post['title']; ?></td>
                             <td>
                                 <div class="d-flex gap-2">
-                                    <a href="/dashboard/show?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
-                                    <a href="/dashboard/edit?id=<?= $post['id'] ?>" role="button" class="btn btn-secondary">Edit</a>
-                                    <a href="/dashboard/destroy?id=<?= $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
+                                    <a href="/dashboard/posts/show?id=<?= $post['id'] ?>" role="button" class="btn btn-primary">Detail</a>
+                                    <a href="/dashboard/posts/edit?id=<?= $post['id'] ?>" role="button" class="btn btn-secondary">Edit</a>
+                                    <a href="/dashboard/posts/destroy?id=<?= $post['id'] ?>" role="button" class="btn btn-danger">Delete</a>
                                 </div>
                             </td>
                         </tr>
