@@ -1,5 +1,5 @@
 <?php
-require '../functions.php';
+require './functions.php';
 
 authenticatedMiddleware();
 
@@ -8,9 +8,9 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
 
 ?>
 
-<?php require '../components/header.php' ?>
+<?php require '../../components/header.php' ?>
 
-<?php require '../components/navbar.php' ?>
+<?php require '../../components/navbar.php' ?>
 
 <div class="container">
     <h1 class="fs-5">Posts</h1>
@@ -60,4 +60,4 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
     </div>
 </div>
 
-<?php require '../components/footer.php' ?>
+<?php require '../../components/footer.php' ?>

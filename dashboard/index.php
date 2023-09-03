@@ -2,6 +2,6 @@
 
 <?php require '../components/navbar.php' ?>
 
-<h1>Hello Gallery</h1>
+<h1>Hello Dashboard</h1>
 
 <?php require '../components/footer.php' ?>
