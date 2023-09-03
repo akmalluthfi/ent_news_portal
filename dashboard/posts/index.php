@@ -42,7 +42,7 @@ $posts = getPosts("SELECT * FROM posts WHERE user_id = $userId");
                         <tr>
                             <th scope="row"><?= $index + 1; ?></th>
                             <td>
-                                <img src="../images/<?= $post['image'] ?>" alt="" class="object-fit-cover border rounded" style="width: 10rem;">
+                                <img src="/images/<?= $post['image'] ?>" alt="" class="object-fit-cover border rounded" style="width: 10rem;">
                             </td>
                             <td><?= $post['title']; ?></td>
                             <td>
