@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 02, 2023 at 03:11 AM
+-- Generation Time: Sep 03, 2023 at 03:02 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -29,13 +29,13 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `posts` (
   `id` bigint UNSIGNED NOT NULL,
-  `image` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `body` text NOT NULL,
+  `image` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `title` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `body` text COLLATE utf8mb4_general_ci NOT NULL,
   `user_id` bigint NOT NULL,
   `created_at` timestamp NOT NULL,
   `updated_at` timestamp NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `posts`
@@ -45,7 +45,8 @@ INSERT INTO `posts` (`id`, `image`, `title`, `body`, `user_id`, `created_at`, `u
 (17, '2023_09_01_113348_profil_neko.jpg', 'Example Post', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur obcaecati odio asperiores iste natus porro alias rem. Mollitia culpa porro exercitationem, aperiam quam minima, perspiciatis odio nam doloribus eligendi error iure eum optio sunt nesciunt fugit corrupti maxime laborum ducimus saepe voluptatibus officia odit. Pariatur enim et nemo inventore quis quasi mollitia. Neque nisi in adipisci error tempore labore dolore esse, repudiandae libero ratione enim voluptatem reprehenderit aliquid, ipsam pariatur unde consectetur! Sit totam accusantium obcaecati dignissimos consectetur excepturi velit maxime expedita vitae a mollitia cum adipisci nostrum repellat numquam quo, omnis quibusdam quasi est id? Culpa quod itaque consequatur!', 5, '2023-09-01 04:33:48', '2023-09-01 04:33:48'),
 (18, '2023_09_02_022655_wallpaper23.png', 'Test post 2', 'Hello Input', 5, '2023-09-01 19:15:40', '2023-09-01 19:26:55'),
 (19, '2023_09_02_022709_wallpaper11.jpg', 'tetst posts 3', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis eum laborum nobis fuga reiciendis odit excepturi. Officia odit optio quis minima libero natus. Eligendi non possimus eum assumenda ipsa eveniet accusantium saepe earum molestiae quam? Iure reprehenderit optio magni enim quae, qui pariatur expedita, ex porro eligendi quo id blanditiis? Veniam veritatis nisi dolores dolorum exercitationem repellendus. Itaque, quod? Tenetur molestias nesciunt ex magnam corrupti pariatur iste rem accusamus vel voluptatem commodi sed maiores harum illum delectus, placeat dolorem laudantium repudiandae necessitatibus? Ab hic aspernatur odit totam iste pariatur, unde praesentium ut molestiae! Optio ullam molestias numquam aspernatur pariatur?', 5, '2023-09-01 19:16:08', '2023-09-01 19:27:09'),
-(20, '2023_09_02_022723_wallpaper4.jpg', 'Tets posts 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis eum laborum nobis fuga reiciendis odit excepturi. Officia odit optio quis minima libero natus. Eligendi non possimus eum assumenda ipsa eveniet accusantium saepe earum molestiae quam? Iure reprehenderit optio magni enim quae, qui pariatur expedita, ex porro eligendi quo id blanditiis? Veniam veritatis nisi dolores dolorum exercitationem repellendus. Itaque, quod? Tenetur molestias nesciunt ex magnam corrupti pariatur iste rem accusamus vel voluptatem commodi sed maiores harum illum delectus, placeat dolorem laudantium repudiandae necessitatibus? Ab hic aspernatur odit totam iste pariatur, unde praesentium ut molestiae! Optio ullam molestias numquam aspernatur pariatur?', 5, '2023-09-01 19:16:28', '2023-09-01 19:27:23');
+(20, '2023_09_02_022723_wallpaper4.jpg', 'Tets posts 4', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates veritatis eum laborum nobis fuga reiciendis odit excepturi. Officia odit optio quis minima libero natus. Eligendi non possimus eum assumenda ipsa eveniet accusantium saepe earum molestiae quam? Iure reprehenderit optio magni enim quae, qui pariatur expedita, ex porro eligendi quo id blanditiis? Veniam veritatis nisi dolores dolorum exercitationem repellendus. Itaque, quod? Tenetur molestias nesciunt ex magnam corrupti pariatur iste rem accusamus vel voluptatem commodi sed maiores harum illum delectus, placeat dolorem laudantium repudiandae necessitatibus? Ab hic aspernatur odit totam iste pariatur, unde praesentium ut molestiae! Optio ullam molestias numquam aspernatur pariatur?', 5, '2023-09-01 19:16:28', '2023-09-01 19:27:23'),
+(21, '2023_09_02_032041_wallpaper28.jpg', 'Example Post', 'hleo post', 5, '2023-09-01 20:20:41', '2023-09-01 20:20:41');
 
 -- --------------------------------------------------------
 
@@ -55,9 +56,9 @@ INSERT INTO `posts` (`id`, `image`, `title`, `body`, `user_id`, `created_at`, `u
 
 CREATE TABLE `users` (
   `id` bigint NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -95,7 +96,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
